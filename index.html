@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chessproved</title><meta name="description" content="Chessproved — daily chess tactics.">
+<style>
+:root{--bg:#f6efe6;--card:#fffaf4;--ink:#2b1d14;--ink2:#6b5647;--accent:#8a4b2a;--line:#e6d8c8}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1410;--card:#261c16;--ink:#f3e9df;--ink2:#bba894;--accent:#e0a074;--line:#3a2c22}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:680px;margin:0 auto;padding:32px 16px 64px}
+h1{font-family:"New York",ui-serif,Georgia,serif;font-size:2.2rem;line-height:1.15;margin:.2em 0}
+h2{font-size:1.1rem;margin:0 0 .3em}p{margin:.3em 0;color:var(--ink2)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--accent);text-decoration:none}
+.brand span{font-size:1.6rem}.muted{font-size:.85rem;color:var(--ink2)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin:14px 0}
+.summary{color:var(--ink);font-weight:500}
+nav.langs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+nav.langs a{padding:5px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink2);text-decoration:none;font-size:.9rem}
+nav.langs a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+a{color:var(--accent)}.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:600;margin-top:8px}
+footer{margin-top:32px;font-size:.85rem;color:var(--ink2)}footer a{margin-right:14px}
+section[lang]:not(.on){display:none}
+</style></head><body><main>
+<a class="brand" href="./"><span>♞</span>Chessproved</a>
+<nav class="langs"><a data-l="en" href="?lang=en">English</a><a data-l="tr" href="?lang=tr">Türkçe</a><a data-l="es" href="?lang=es">Español</a><a data-l="fr" href="?lang=fr">Français</a><a data-l="it" href="?lang=it">Italiano</a></nav>
+<section lang="en"><h1>Chessproved</h1><p>Daily chess puzzles & tactics</p><div class="card"><p><a href="support.html?lang=en">Support</a> · <a href="privacy.html?lang=en">Privacy Policy</a></p></div></section><section lang="tr"><h1>Chessproved</h1><p>Günlük satranç bulmacaları</p><div class="card"><p><a href="support.html?lang=tr">Destek</a> · <a href="privacy.html?lang=tr">Gizlilik Politikası</a></p></div></section><section lang="es"><h1>Chessproved</h1><p>Problemas de ajedrez diarios</p><div class="card"><p><a href="support.html?lang=es">Soporte</a> · <a href="privacy.html?lang=es">Política de privacidad</a></p></div></section><section lang="fr"><h1>Chessproved</h1><p>Problèmes d’échecs du jour</p><div class="card"><p><a href="support.html?lang=fr">Assistance</a> · <a href="privacy.html?lang=fr">Politique de confidentialité</a></p></div></section><section lang="it"><h1>Chessproved</h1><p>Scacchi: tattiche quotidiane</p><div class="card"><p><a href="support.html?lang=it">Supporto</a> · <a href="privacy.html?lang=it">Informativa sulla privacy</a></p></div></section>
+<footer></footer>
+</main>
+<script>
+(function(){var langs=["en", "tr", "es", "fr", "it"];var q=new URLSearchParams(location.search).get('lang');
+var pick=q&&langs.indexOf(q)>=0?q:null;
+if(!pick){var n=(navigator.languages||[navigator.language||'en']);for(var i=0;i<n.length&&!pick;i++){var c=(n[i]||'').slice(0,2).toLowerCase();if(langs.indexOf(c)>=0)pick=c;}}
+pick=pick||'en';document.documentElement.lang=pick;
+document.querySelectorAll('section[lang]').forEach(function(s){s.classList.toggle('on',s.getAttribute('lang')===pick)});
+document.querySelectorAll('nav.langs a').forEach(function(a){a.classList.toggle('on',a.dataset.l===pick)});})();
+</script></body></html>
